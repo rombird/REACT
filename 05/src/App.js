@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Component_01 from '../../05/src/05조건부랜더링/01Component'
 import Component_02 from './05조건부랜더링/02Component'
+import Component_03 from './05조건부랜더링/03Component'
 
 
 function App() {
@@ -14,10 +15,9 @@ function App() {
       <hr/>
       {/* 삼항연산자 */}
       <Component_02 isAuth={true} />
-
-
+      <hr/>
       {/* && */}
-
+      <Component_03 items={['aaa', 'bbb', 'ccc', 'ddd']} />
       
     </div>
   );
