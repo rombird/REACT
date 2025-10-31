@@ -32,7 +32,7 @@ const Param = ()=>{
                 <hr/>
                 <button onClick={handleParam2}> GET /param/02/홍길동/55/대구</button>
                 <hr/>
-                <button onClick={handleParam3}> POST /param/03/홍길동/55/대구</button>
+                <button onClick={handleParam3}> POST /param/03/하하/56/서울</button>
                 <hr/>
         </div>
     )
