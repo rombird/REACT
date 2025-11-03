@@ -47,7 +47,6 @@ const List  = ()=>{
                 link.click();                                                           //클릭
                 link.parentNode.removeChild(link);                                      //Body에서 제거
 
-
             }
             reqFunction();
 
@@ -64,6 +63,7 @@ const List  = ()=>{
         
         <div>
             <h1>파일 목록 확인 (REACT-SPRINGBOOT)</h1>
+            {/* fileList에 있는 내용이 문제가 없다면 요소와 요소 번호를 이용해 배열 */}
             {fileList&&(
                 
                 fileList.map( (el,idx)=>{

@@ -49,7 +49,7 @@ public class KakaoRestfulAPIController {
         params.add("client_id",CLIENT_ID);
         params.add("redirect_uri",REDIRECT_URI);
         params.add("code",code);
-        params.add("client_secret","-");
+        params.add("client_secret","-"); // client_secret 코드 같이 넣어주기
 
         HttpEntity< MultiValueMap<String,String> > entity = new HttpEntity<>(params,header);
 

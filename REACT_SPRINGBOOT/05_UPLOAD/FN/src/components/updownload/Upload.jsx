@@ -8,11 +8,12 @@ const Upload  = ()=>{
 
 
     const fileChangeHandler = (e)=>{
-        console.log(e);
-        console.log(e.target);
-        console.log(e.target.files);
+        // console.log(e);
+        // console.log(e.target);
+        // console.log(e.target.files);
        
         //console.log(e.target.files[0]);
+        // 파일 선택시 console.log로 출력(업로드 될때마다(변경될때마다) 수정)
         for(let idx in e.target.files)
             console.log(e.target.files[idx]);
         
@@ -25,7 +26,7 @@ const Upload  = ()=>{
     const uploadHandler = (e)=>{
         //UPLOAD 
         const formData = new FormData();
-        for(let idx in files)
+        for(let idx in files) // files안에 있는 인덱스를꺼내서 폼데이터에 전달
             formData.append("files",files[idx])
         axios
         .post(

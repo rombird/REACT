@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState} from "react";
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 //스프링 서버로 요청
 const KakaoLogin = ()=>{
@@ -43,11 +44,25 @@ const KakaoLogin = ()=>{
 
         }
     }
+
+    const handleClick_2 = () => {
+        const reqFunction = async ()=>{
+            window.open('http://localhost:8080/kakao/getCode', "팝업테스트", "width=400, height=300, top=50, left=50")
+        }
+        reqFunction();
+    }
+
     return (
         <>
             <h1>KAKAO LOGIN</h1>        
             {/* 동기요청 */}
             <a href="http://localhost:8080/kakao/getCode">로그인요청</a> | 
+
+            {/* 비동기요청 */}
+            <button onClick = {handleClick_2}>로그인요청(비동기)</button>
+
+
+
             {/* 비동기요청 */}
             <button onClick={profileHandler}>프로필 확인</button> | 
             {/* 동기요청  */}

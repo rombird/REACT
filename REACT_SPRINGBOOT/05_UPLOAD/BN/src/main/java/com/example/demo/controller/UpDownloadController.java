@@ -30,6 +30,7 @@ public class UpDownloadController {
     @Value("${upload.path}")
     private String Upload;
 
+
     @PostMapping(value="/upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public void upload(@RequestParam("files") MultipartFile[] files) throws IOException {
         log.info("POST /upload... file : "+files);
@@ -72,7 +73,7 @@ public class UpDownloadController {
 
         if(fileList.length!=0) {
             List list = Arrays  .stream(fileList)
-                                .map(el-> uploadPath + File.separator +  el.getName())
+                                .map(el-> uploadPath + File.separator +  el.getName()) // 파일 이름에 경로정보를 살려서(보여주기용) -> 실제 작업시에는 경로정보 빼고 작업
                                 .collect(Collectors.toList());
             return new ResponseEntity(list, HttpStatus.OK);
         }
